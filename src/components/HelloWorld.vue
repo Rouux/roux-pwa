@@ -33,8 +33,8 @@
 export default {
   name: 'HelloWorld',
   props: {
-    title: String,
-  },
+    title: String
+  }
 };
 </script>
 
