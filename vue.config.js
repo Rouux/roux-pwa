@@ -1,7 +1,7 @@
 module.exports = {
   // ...other vue-cli plugin options...
   pwa: {
-    name: 'My App',
+    name: 'My first PWA',
     themeColor: '#4DBA87',
     msTileColor: '#000000',
     appleMobileWebAppCapable: 'yes',
@@ -12,7 +12,6 @@ module.exports = {
     workboxOptions: {
       // swSrc is required in InjectManifest mode.
       swSrc: 'src/registerServiceWorker.js'
-      // ...other Workbox options...
     }
   }
 };

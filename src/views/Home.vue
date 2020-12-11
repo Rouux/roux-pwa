@@ -9,7 +9,7 @@
 
 <script>
 import FeatureCard from '../components/FeatureCard.vue';
-import { features } from '../utils/features';
+import { features } from '@/components/features';
 
 export default {
   name: 'Home',

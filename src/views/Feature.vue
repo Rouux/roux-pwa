@@ -7,7 +7,7 @@
 
 <script>
 import FeatureHeader from '../components/FeatureHeader.vue';
-import { features } from '../utils/features';
+import { features } from '@/components/features';
 
 export default {
   name: 'Feature',

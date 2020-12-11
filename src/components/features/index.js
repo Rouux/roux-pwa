@@ -20,7 +20,7 @@ const featureArray = [
     name: 'pwd',
     title: 'Feature PWD',
     path: '/feature/pwd',
-    component: import('@/components/features/Password.vue')
+    component: import('./Password')
   }
 ];
 
