@@ -1,18 +1,25 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld title="ABCDEFGHIJKLMNOPQRST" />
+    <div v-for="feature in features" v-bind:key="feature.id">
+      <feature-card :title="feature.title" :path="feature.path" />
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import FeatureCard from '../components/FeatureCard.vue';
+import { features } from '../utils/features';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    FeatureCard
+  },
+  data() {
+    return {
+      features
+    };
   }
 };
 </script>
