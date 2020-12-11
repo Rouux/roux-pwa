@@ -6,22 +6,24 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
+@import 'style';
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $color;
   padding-bottom: 0.1em;
 }
 #app-background {
-  background-image: url('./assets/background-space.jpg') !important;
+  /* background-image: url('./assets/background-space.jpg') !important; */
   height: 100%;
   padding: 0;
   margin: 0;
   width: 100%;
   min-height: 100vh;
+  background-color: $background-color;
   background-size: 100vw;
 }
 </style>

@@ -22,8 +22,15 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
+@import '@/style';
+
 .header-card {
   margin-bottom: 1em;
+  background-color: $element-color !important;
+}
+
+.md-title {
+  color: $color;
 }
 </style>

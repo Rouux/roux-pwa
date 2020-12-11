@@ -1,13 +1,11 @@
 <template>
-  <transition path="translate">
-    <md-card md-with-hover class="isolate-card">
-      <div @click="onClickCard(path)" ref="card">
-        <md-card-header>
-          <div class="md-title">{{ title }}</div>
-        </md-card-header>
-      </div>
-    </md-card>
-  </transition>
+  <md-card md-with-hover class="isolate-card">
+    <div @click="onClickCard(path)">
+      <md-card-header>
+        <div class="md-title">{{ title }}</div>
+      </md-card-header>
+    </div>
+  </md-card>
 </template>
 
 <script>
@@ -25,11 +23,15 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
+@import '@/style';
+
 .isolate-card {
   margin: 1em;
+  background-color: $element-color !important;
 }
-.active {
-  background-color: red !important;
+
+.md-title {
+  color: $color;
 }
 </style>

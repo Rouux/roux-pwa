@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     currentComponent() {
-      return features[this.name];
+      return features[this.name].component;
     }
   }
 };
