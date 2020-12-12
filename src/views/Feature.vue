@@ -7,7 +7,7 @@
 
 <script>
 import FeatureHeader from '../components/FeatureHeader.vue';
-import { features } from '@/components/features';
+import { features } from '../components/features';
 
 export default {
   name: 'Feature',
@@ -16,14 +16,16 @@ export default {
   },
   data() {
     const { name } = this.$route.params;
+    const feature = features[name];
     return {
       name,
-      ...features[name]
+      feature,
+      ...feature
     };
   },
   methods: {
     currentComponent() {
-      return features[this.name].component;
+      return this.component;
     }
   }
 };

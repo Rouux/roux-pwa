@@ -1,22 +1,29 @@
 <template>
-  <md-card md-with-hover class="isolate-card">
-    <div @click="onClickCard(path)">
+  <div @click="navigateTo(path)" class="unselectable">
+    <md-card md-with-hover class="isolate-card">
       <md-card-header>
         <div class="md-title">{{ title }}</div>
       </md-card-header>
-    </div>
-  </md-card>
+    </md-card>
+  </div>
 </template>
 
 <script>
+import { features } from './features';
+
 export default {
   path: 'FeatureCard',
   props: {
-    title: String,
-    path: String
+    name: String
+  },
+  data() {
+    const feature = features[this.name];
+    return {
+      ...feature
+    };
   },
   methods: {
-    onClickCard(path) {
+    navigateTo(path) {
       this.$router.push({ path });
     }
   }

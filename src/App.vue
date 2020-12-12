@@ -17,7 +17,6 @@
   padding-bottom: 0.1em;
 }
 #app-background {
-  /* background-image: url('./assets/background-space.jpg') !important; */
   height: 100%;
   padding: 0;
   margin: 0;

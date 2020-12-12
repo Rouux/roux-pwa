@@ -1,10 +1,14 @@
+// eslint-disable-next-line no-unused-vars
+import { Component } from 'vue';
+
 /**
  * @typedef {Object} Feature
  * @property {number} id The name of the feature
  * @property {string} name The name of the feature
  * @property {string} title The title in the feature card
- * @property {string} path The complete path to the feature
- * @property {Component} component The Vusjs component of the feature
+ * @property {string} path The path to the feature
+ * @property {Promise<Component>} component The Vuejs component of the feature
+ * @exports Feature
  */
 
 /**
@@ -18,7 +22,7 @@
 const featureArray = [
   {
     name: 'pwd',
-    title: 'Feature PWD',
+    title: 'Password Holder',
     path: '/feature/pwd',
     component: import('./Password')
   }

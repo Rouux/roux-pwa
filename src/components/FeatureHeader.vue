@@ -1,11 +1,11 @@
 <template>
-  <md-card class="header-card">
-    <div @click="onClickHeader">
+  <div @click="onClickHeader" class="unselectable">
+    <md-card class="header-card">
       <md-card-header>
         <div class="md-title">{{ title }}</div>
       </md-card-header>
-    </div>
-  </md-card>
+    </md-card>
+  </div>
 </template>
 
 <script>
