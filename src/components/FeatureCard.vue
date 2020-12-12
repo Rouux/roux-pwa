@@ -17,7 +17,10 @@ export default {
     name: String
   },
   data() {
-    const feature = features[this.name];
+    const feature = {
+      ...features[this.name]
+    };
+    delete feature.name;
     return {
       ...feature
     };
