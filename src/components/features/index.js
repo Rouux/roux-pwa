@@ -25,6 +25,54 @@ const featureArray = [
     title: 'Password Holder',
     path: '/feature/pwd',
     component: import('./Password')
+  },
+  {
+    name: 'pwd2',
+    title: 'Password Holder',
+    path: '/feature/pwd',
+    component: import('./Password')
+  },
+  {
+    name: 'pwd3',
+    title: 'Password Holder',
+    path: '/feature/pwd',
+    component: import('./Password')
+  },
+  {
+    name: 'pwd4',
+    title: 'Password Holder',
+    path: '/feature/pwd',
+    component: import('./Password')
+  },
+  {
+    name: 'pwd5',
+    title: 'Password Holder',
+    path: '/feature/pwd',
+    component: import('./Password')
+  },
+  {
+    name: 'pwd6',
+    title: 'Password Holder',
+    path: '/feature/pwd',
+    component: import('./Password')
+  },
+  {
+    name: 'pwd7',
+    title: 'Password Holder',
+    path: '/feature/pwd',
+    component: import('./Password')
+  },
+  {
+    name: 'pwd8',
+    title: 'Password Holder',
+    path: '/feature/pwd',
+    component: import('./Password')
+  },
+  {
+    name: 'pwd9',
+    title: 'Password Holder',
+    path: '/feature/pwd',
+    component: import('./Password')
   }
 ];
 

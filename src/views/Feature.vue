@@ -1,6 +1,6 @@
 <template>
   <div>
-    <feature-header :title="title" />
+    <!-- <feature-header :title="title" /> -->
     <component v-bind:is="currentComponent"></component>
   </div>
 </template>
