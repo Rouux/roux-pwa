@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <feature-header :title="title" /> -->
     <component v-bind:is="currentComponent"></component>
   </div>
 </template>
@@ -8,24 +7,21 @@
 <script>
 import FeatureHeader from '../components/FeatureHeader.vue';
 import { features } from '../components/features';
+import { bus } from '../main';
+import { events } from '../utils/const';
 
 export default {
   name: 'Feature',
   components: {
     FeatureHeader
   },
-  data() {
-    const { name } = this.$route.params;
-    const feature = features[name];
-    return {
-      name,
-      feature,
-      ...feature
-    };
+  beforeMount: function() {
+    this.feature = features(this.$route.params.name);
+    bus.$emit(events.CHANGE_NAV_HEADER, this.feature.title);
   },
   methods: {
     currentComponent() {
-      return this.component;
+      return this.feature.component;
     }
   }
 };

@@ -5,19 +5,16 @@
       <div class="spacer">
         <router-view />
       </div>
-      <bottom-bar />
     </div>
   </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue';
-import BottomBar from './components/BottomBar.vue';
 
 export default {
   components: {
-    NavBar,
-    BottomBar
+    NavBar
   }
 };
 </script>
@@ -35,16 +32,9 @@ export default {
 
 #app-background {
   height: 100%;
-  padding: 0;
-  margin: 0;
   width: 100%;
   min-height: 100vh;
   background-color: $background-color;
   background-size: 100vw;
-}
-
-.spacer {
-  padding-top: 4.2em;
-  padding-bottom: 4em;
 }
 </style>

@@ -5,7 +5,6 @@ import router from './router';
 import {
   MdCard,
   MdToolbar,
-  MdBottomBar,
   MdMenu,
   MdButton,
   MdList,
@@ -16,13 +15,13 @@ import 'vue-material/dist/theme/default.css';
 
 Vue.use(MdCard);
 Vue.use(MdToolbar);
-Vue.use(MdBottomBar);
 Vue.use(MdMenu);
 Vue.use(MdButton);
 Vue.use(MdList);
 Vue.use(MdIcon);
 
 Vue.config.productionTip = false;
+export const bus = new Vue();
 
 new Vue({
   router,

@@ -16,18 +16,16 @@ export default {
   props: {
     name: String
   },
-  data() {
-    const feature = {
-      ...features[this.name]
-    };
-    delete feature.name;
+  data: function() {
+    const feature = features(this.name);
     return {
-      ...feature
+      path: feature.path,
+      title: feature.title
     };
   },
   methods: {
     navigateTo(path) {
-      this.$router.push({ path });
+      this.$router.push(path);
     }
   }
 };
