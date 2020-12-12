@@ -37,4 +37,8 @@ export default {
   background-color: $background-color;
   background-size: 100vw;
 }
+
+.spacer {
+  padding-top: 4.5em;
+}
 </style>

@@ -86,8 +86,4 @@ $header-color: rgb(28, 28, 28);
     color: $color !important;
   }
 }
-
-.spacer {
-  padding-top: 4.5em;
-}
 </style>
