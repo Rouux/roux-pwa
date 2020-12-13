@@ -1,6 +1,9 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
+    <div v-for="user in users" v-bind:key="user.id">
+      <span>{{ user }}</span>
+    </div>
     <div v-for="feature in features" v-bind:key="feature.name">
       <feature-card :name="feature.name" />
     </div>
@@ -22,6 +25,7 @@ export default {
   },
   data: function() {
     return {
+      users: [],
       features: features()
     };
   },

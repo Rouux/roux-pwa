@@ -8,18 +8,27 @@ import {
   MdMenu,
   MdButton,
   MdList,
-  MdIcon
+  MdIcon,
+  MdField,
+  MdSnackbar,
+  MdProgress
 } from 'vue-material/dist/components';
 import 'vue-material/dist/vue-material.min.css';
 import 'vue-material/dist/theme/default.css';
+import VueCookies from 'vue-cookies';
 
+Vue.use(VueCookies);
 Vue.use(MdCard);
 Vue.use(MdToolbar);
 Vue.use(MdMenu);
 Vue.use(MdButton);
 Vue.use(MdList);
 Vue.use(MdIcon);
+Vue.use(MdField);
+Vue.use(MdSnackbar);
+Vue.use(MdProgress);
 
+Vue.$cookies.config('7d');
 Vue.config.productionTip = false;
 export const bus = new Vue();
 
