@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <component v-bind:is="currentComponent"></component>
-  </div>
+  <component v-bind:is="currentComponent"></component>
 </template>
 
 <script>

@@ -10,6 +10,7 @@ import {
   MdList,
   MdIcon,
   MdField,
+  MdContent,
   MdSnackbar,
   MdProgress
 } from 'vue-material/dist/components';
@@ -25,6 +26,7 @@ Vue.use(MdButton);
 Vue.use(MdList);
 Vue.use(MdIcon);
 Vue.use(MdField);
+Vue.use(MdContent);
 Vue.use(MdSnackbar);
 Vue.use(MdProgress);
 

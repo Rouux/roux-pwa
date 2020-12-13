@@ -1,0 +1,60 @@
+<div>
+  <div class="centered-container">
+    <md-content class="md-elevation-3">
+      <div class="title">
+        <img alt="Vue logo" src="@/assets/logo.png" />
+        <div class="md-title">Login</div>
+      </div>
+
+      <form novalidate @submit.prevent="validateUser">
+        <div class="form">
+          <md-field :class="getValidationClass('username')">
+            <label for="username">Username</label>
+            <md-input
+              name="username"
+              id="username"
+              v-model="form.username"
+              :disabled="sending"
+            />
+            <span class="md-error" v-if="!$v.form.username.required"
+              >The username is required</span
+            >
+            <span class="md-error" v-else-if="!$v.form.username.length"
+              >Invalid username</span
+            >
+          </md-field>
+
+          <md-field :class="getValidationClass('password')">
+            <label for="password">Password</label>
+            <md-input
+              name="password"
+              id="password"
+              type="password"
+              v-model="form.password"
+              :disabled="sending"
+            />
+            <span class="md-error" v-if="!$v.form.password.required"
+              >The password is required</span
+            >
+            <span class="md-error" v-else-if="!$v.form.password.length"
+              >Invalid password</span
+            >
+          </md-field>
+        </div>
+
+        <div class="actions md-layout md-alignment-center">
+          <md-button type="submit" class="md-primary" :disabled="sending"
+            >Login</md-button
+          >
+        </div>
+      </form>
+      <div class="loading-overlay" v-if="sending">
+        <md-progress-spinner
+          md-mode="indeterminate"
+          :md-stroke="2"
+        ></md-progress-spinner>
+      </div>
+    </md-content>
+  </div>
+  <md-snackbar :md-active.sync="unauthorized">Credentials WRONG</md-snackbar>
+</div>

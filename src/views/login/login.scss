@@ -1,0 +1,66 @@
+@import '@/style.scss';
+
+.centered-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 2em;
+  .title {
+    text-align: center;
+    margin-bottom: 30px;
+    img {
+      margin-bottom: 16px;
+      max-width: 80px;
+    }
+    .md-title {
+      color: $color;
+    }
+  }
+  .actions {
+    .md-button {
+      color: $color;
+      margin: 0;
+    }
+  }
+  .form {
+    margin-bottom: 2.5em;
+
+    .md-field {
+      background-color: rgba($background-color, 0.8);
+      border-style: solid;
+      border-width: 1px;
+      border-color: rgb(32, 32, 32);
+    }
+
+    .md-field.md-theme-default::before {
+      background-color: $color;
+    }
+
+    .md-field.md-theme-default label {
+      color: $color;
+    }
+  }
+  .md-content {
+    z-index: 1;
+    padding: 2em;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    background-color: $element-color !important;
+    color: $color !important;
+  }
+  .loading-overlay {
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(80, 80, 80, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
