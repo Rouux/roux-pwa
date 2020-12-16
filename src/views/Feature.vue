@@ -6,7 +6,7 @@
 import FeatureHeader from '../components/FeatureHeader.vue';
 import { features } from '../components/features';
 import { bus } from '../main';
-import { events } from '../utils/const';
+import { EVENTS } from '../utils/const';
 
 export default {
   name: 'Feature',
@@ -15,7 +15,7 @@ export default {
   },
   beforeMount: function() {
     this.feature = features(this.$route.params.name);
-    bus.$emit(events.CHANGE_NAV_HEADER, this.feature.title);
+    bus.$emit(EVENTS.CHANGE_NAV_HEADER, this.feature.title);
   },
   methods: {
     currentComponent() {

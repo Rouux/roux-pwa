@@ -1,7 +1,7 @@
 import { validationMixin } from 'vuelidate';
 import { required, minLength, maxLength, and } from 'vuelidate/lib/validators';
 import { bus } from '@/main';
-import { events } from '@/utils/const';
+import { EVENTS } from '@/utils/const';
 import { login } from '@/services/auth-service';
 
 export default {
@@ -31,7 +31,7 @@ export default {
     }
   },
   mounted: function() {
-    bus.$emit(events.CHANGE_NAV_HEADER, 'Login');
+    bus.$emit(EVENTS.CHANGE_NAV_HEADER, 'Login');
   },
   methods: {
     getValidationClass(fieldName) {

@@ -18,9 +18,10 @@
           <md-icon class="md-size-1x icon">menu</md-icon>
         </md-button>
         <md-menu-content>
-          <md-menu-item v-for="item in items" v-bind:key="item">{{
-            item
-          }}</md-menu-item>
+          <md-menu-item v-if="isLoggedIn">Profile</md-menu-item>
+          <md-menu-item v-if="isLoggedIn">Settings</md-menu-item>
+          <md-menu-item @click="logout" v-if="isLoggedIn">Logout</md-menu-item>
+          <md-menu-item @click="login" v-if="!isLoggedIn">Login</md-menu-item>
         </md-menu-content>
       </md-menu>
     </md-toolbar>
@@ -29,7 +30,9 @@
 
 <script>
 import { bus } from '../main';
-import { events } from '../utils/const';
+import { EVENTS } from '../utils/const';
+import * as auth from '../services/auth-service';
+import { isAuthentified } from '../services/auth-service';
 export const DEFAULT_TITLE = 'Welcome !';
 
 export default {
@@ -37,13 +40,33 @@ export default {
   data: function() {
     return {
       items: ['#001', '#002', '#003'],
-      header: String(DEFAULT_TITLE)
+      header: String(DEFAULT_TITLE),
+      isLoggedIn: Boolean(false)
     };
   },
   created: function() {
-    bus.$on(events.CHANGE_NAV_HEADER, header => {
+    isAuthentified().then(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn;
+    });
+    bus.$on(EVENTS.USER_AUTH, isLoggedIn => {
+      console.log('on USER_AUTH', isLoggedIn);
+      this.isLoggedIn = isLoggedIn;
+    });
+    bus.$on(EVENTS.CHANGE_NAV_HEADER, header => {
       this.header = header;
     });
+  },
+  methods: {
+    logout() {
+      auth.logout().then(() => {
+        this.$router.push({ name: 'Login' });
+      });
+    },
+    login() {
+      if (this.$route.name !== 'Login') {
+        this.$router.push({ name: 'Login' });
+      }
+    }
   }
 };
 </script>
