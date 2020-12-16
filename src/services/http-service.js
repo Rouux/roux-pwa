@@ -55,8 +55,5 @@ function injectDefaultOptions(config = {}) {
     ...headers,
     ...config.headers
   };
-  return {
-    withCredentials: true,
-    ...config
-  };
+  return config;
 }
